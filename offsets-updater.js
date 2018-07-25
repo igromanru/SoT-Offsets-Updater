@@ -24,7 +24,7 @@ function updateOffsets(offsetsFilePath, sdkPath) {
         return;
     }
 
-    var offsetsFileArray = fs.readFileSync(offsetsFilePath, 'utf8').split(endOfLine);
+    var offsetsFileArray = fs.readFileSync(offsetsFilePath, 'utf8').split("\n");
     if(offsetsFileArray && offsetsFileArray.length > 1) {
         const offsetStartRegEx = new RegExp('\/\/ :(.*?:.*?:.*?)$', 'gm');
         const offsetRegEx = /^.*?static\s+?constexpr\s+?int.*?=\s+?0x(.*?);/gm;
